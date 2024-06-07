@@ -14,7 +14,7 @@ function playSound(e) {
   //Makes it so audio is always played from the start if key is pressed multiple times, quickly
   audio.currentTime = 0;
   audio.play();
-  key.classList.add(playing); //Button animation
+  key.classList.add('playing'); //Button animation
 }
 
 function removeTransition(e) {
@@ -24,6 +24,11 @@ function removeTransition(e) {
 
 function handleKeyUp(e) {
   pressedKeys[e.keyCode] = false;
+
+  const key = document.querySelector(`button[data-key="${e.keyCode}"]`);
+  if (!key) return;
+
+  key.classList.remove("playing");
 }
 
 const keys = document.querySelectorAll("drum");
