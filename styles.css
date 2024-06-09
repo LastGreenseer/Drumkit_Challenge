@@ -23,7 +23,7 @@ body {
   border: none;
   padding: 20px;
   margin: 10px;
-  box-shadow: 0 4px #bbb;
+  box-shadow: 0 6px #292828;
   font-size: 24px;
   font-weight: bold;
   color: white;
@@ -34,8 +34,10 @@ body {
 
 
 
-.drum.playing {
-  transform: scale(1.1);
+.drum.playing { 
+  transform: translateY(4px);
+  box-shadow: 0 2px #3f3d3d;
+  background: #555;
 }
 
 .drum:active {
