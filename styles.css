@@ -10,27 +10,53 @@ body {
 }
 
 .drumkit {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
+  display: grid;
+  grid-template-columns: repeat(3, 100px);
+  gap: 10px;
 }
 
 .drum {
+  position: relative;
+  width: 100px;
+  height: 100px;
   background: #444;
   border: none;
   padding: 20px;
   margin: 10px;
+  box-shadow: 0 4px #bbb;
   font-size: 24px;
+  font-weight: bold;
   color: white;
   cursor: pointer;
   border-radius: 5px;
   transition: transform 0.02s ease;
 }
 
+
+
 .drum.playing {
   transform: scale(1.1);
 }
 
 .drum:active {
+  transform: translateY(4px);
+  box-shadow: 0 2px #bbb;
   background: #555;
+}
+
+.drum img {
+  width: 60%;
+  height:60%;
+  object-fit: contain;
+  position: absolute;
+  top: 10px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.drum span {
+  position: absolute;
+  bottom: 10px;
+  left: 50%;
+  transform: translateX(-50%)
 }
